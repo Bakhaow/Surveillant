@@ -8,12 +8,11 @@ client.on('ready', () => {
 });
 
 client.on('message', message => {
-    let pupil = message.guild.roles.find(role => role.name === "Eleve");
     if (message.content === 'eleve') {
-       if(message.member.roles.has(pupil)) {
+       if(message.member.roles.has(689180199224475720)) {
          message.reply('tu es déja éléve.');
          } else {
-         message.member.addRole(pupil).catch(console.error);
+         message.member.addRole(689180199224475720).catch(console.error);
          message.reply('registered');
        }
        }
