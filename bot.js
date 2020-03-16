@@ -16,7 +16,7 @@ client.on('message', message => {
         let nom = args[0];
         let prenom = args[1];
         let nickname = nom + " " + prenom;
-        message.member.user.setNickname(nickname)
+        message.member.setNickname(nickname)
         message.channel.send('Registering ' + nickname);
     }
 });
