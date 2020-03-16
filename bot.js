@@ -13,7 +13,7 @@ client.on('message', message => {
     const command = args.shift().toLowerCase();
 
     if(command === 'register') {
-        message.channel.send('Registering @' + message.member.user);
+        message.channel.send('Registering ' + message.member.user);
     }
 });
 
