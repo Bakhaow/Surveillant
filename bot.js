@@ -1,6 +1,5 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-let pupil = message.guild.roles.find(role => role.name === "Eleve");
 
 client.on('ready', () => {
 
@@ -9,7 +8,7 @@ client.on('ready', () => {
 });
 
 client.on('message', message => {
-
+    let pupil = message.guild.roles.find(role => role.name === "Eleve");
     if (message.content === 'eleve') {
        if(message.member.roles.has(pupil)) {
          message.reply('tu es déja éléve.');
