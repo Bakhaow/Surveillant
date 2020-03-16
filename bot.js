@@ -15,7 +15,6 @@ client.on('message', message => {
     if(command === 'register') {
         message.channel.send('Registering ' + messager.member.user.tag);
     }
-}
 });
 
 client.login(process.env.BOT_TOKEN);
