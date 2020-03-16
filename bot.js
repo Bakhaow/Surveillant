@@ -13,7 +13,11 @@ client.on('message', message => {
     const command = args.shift().toLowerCase();
 
     if(command === 'register') {
-        message.channel.send('Registering ' + message.member.user);
+        let nom = arg[0];
+        let prenom = arg[1];
+        let nickname = nom + " " + prenom;
+        message.member.user.setNickname(nickname)
+        message.channel.send('Registering ' + nickname);
     }
 });
 
