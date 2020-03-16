@@ -1,5 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
+const prefix = "&";
 
 client.on('ready', () => {
 
@@ -8,15 +9,14 @@ client.on('ready', () => {
 });
 
 client.on('message', message => {
-    if (message.content === 'eleve') {
-       if(message.member.roles.has('689180199224475720')) {
-         message.reply('tu es déja éléve.');
-         } else {
-         message.member.addRole('689180199224475720').catch(console.error);
-         message.reply('registered');
-       }
-       }
+    if (!message.content.startsWith(prefix)) return;
+    const args = message.content.slice(prefix.length).trim().split(/ +/g);
+    const command = args.shift().toLowerCase();
 
+    if(command === 'register') {
+        message.channel.send('Registering ' + messager.member.user.tag);
+    }
+}
 });
 
 client.login(process.env.BOT_TOKEN);
