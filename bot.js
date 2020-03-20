@@ -17,6 +17,7 @@ client.on('message', message => {
         let prenom = args[1];
         let nickname = nom.charAt(0).toUpperCase() + ". " + prenom.charAt(0).toUpperCase() + prenom.slice(1);
         message.member.setNickname(nickname)
+        message.member.addRole("689180199224475720").catch(console.error);
         message.channel.send('Registering ' + nickname);
     }
 });
