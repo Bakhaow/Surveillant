@@ -15,7 +15,7 @@ client.on('message', message => {
     if(command === 'register') {
         let nom = args[0];
         let prenom = args[1];
-        let nickname = nom + " " + prenom;
+        let nickname = nom.charAt(0).toUpperCase() + ". " + prenom.charAt(0).toUpperCase() + prenom.slice(1);
         message.member.setNickname(nickname)
         message.channel.send('Registering ' + nickname);
     }
