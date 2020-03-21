@@ -14,15 +14,20 @@ client.on('message', message => {
     const command = args.shift().toLowerCase();
 
     if(command === 'register' || command === 'reg' || command === 'r') {
-        let nom = args[0];
-        let prenom = args[1];
-        let nickname = nom.charAt(0).toUpperCase() + ". " + prenom.charAt(0).toUpperCase() + prenom.slice(1);
-        message.member.setNickname(nickname);
-        message.member.addRole("689180199224475720").catch(console.error);
-        message.channel.send('Bienvenue ' + nickname);
+        if(args.length <= 2) {
+            message.channel.send('Hey il faut que tu entres un nom et un prénom.');
+        } else {
+            let nom = args[0];
+            let prenom = args[1];
+            let nickname = nom.charAt(0).toUpperCase() + ". " + prenom.charAt(0).toUpperCase() + prenom.slice(1);
+            message.member.setNickname(nickname);
+            message.member.addRole("689180199224475720").catch(console.error);
+            message.channel.send('Bienvenue ' + nickname);
+        }
     }else if(command === 'allemand' || command === 'germaniste' || command === 'ger' || command === 'g' || command === 'all' || command === 'a') {
         if(message.member.roles.has('689127335697317901') || message.member.roles.has('689126422941663251')) {
             message.reply('Réfléchis, tu es déja Hispaniste/Espagnol/Germaniste/Allemand, bon sang');
+            message.reply("Si tu penses que c'est une erreur contacte Bakhaow | Safwane");
         } else {
             message.member.addRole("689127335697317901").catch(console.error);
             message.reply('Bien joué tu es maintenant Germaniste/Allemand');
@@ -30,6 +35,7 @@ client.on('message', message => {
     }else if(command === 'espagnol' || command === 'esp' || command === 'e' || command === 'hispaniste' || command === 'h') {
         if(message.member.roles.has('689126422941663251') || message.member.roles.has('689127335697317901')) {
             message.reply('Réfléchis, tu es déja Hispaniste/Espagnol/Germaniste/Allemand, bon sang');
+            message.reply("Si tu penses que c'est une erreur contacte Bakhaow | Safwane");
         } else {
             message.member.addRole("689126422941663251").catch(console.error);
             message.reply('Bien joué tu es maintenant Hispaniste/Espagnol');
