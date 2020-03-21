@@ -36,24 +36,27 @@ client.on('message', message => {
         }
     }else if(command === 'politique' || command === 'po') {
         if(message.member.roles.has('689127737138610278') || message.member.roles.has('689127728796008549') || message.member.roles.has('689127549418078342')) {
-            message.reply('Réfléchis, tu es déja Politicien, bon sang');
+            message.reply('Réfléchis, tu es déja Mathématicien, Economiste ou Politicien bon sang !');
+            message.reply("Si tu penses que c'est une erreur contacte Bakhaow | Safwane");
         } else {
             message.member.addRole("689127737138610278").catch(console.error);
             message.reply('Bien joué tu es maintenant Politicien');
         }
     }else if(command === 'economique' || command === 'eco') {
         if(message.member.roles.has('689127737138610278') || message.member.roles.has('689127728796008549') || message.member.roles.has('689127549418078342')) {
-            message.reply('Réfléchis, tu es déja Economiste, bon sang');
+            message.reply('Réfléchis, tu es déja Mathématicien, Economiste ou Politicien bon sang !');
+            message.reply("Si tu penses que c'est une erreur contacte Bakhaow | Safwane");
         } else {
             message.member.addRole("689127728796008549").catch(console.error);
             message.reply('Bien joué tu es maintenant Economiste');
         }
     }else if(command === 'maths' || command === 'm') {
         if(message.member.roles.has('689127737138610278') || message.member.roles.has('689127728796008549') || message.member.roles.has('689127549418078342')) {
-            message.reply('Réfléchis, tu es déja mathématicien, bon sang');
+            message.reply('Réfléchis, tu es déja Mathématicien, Economiste ou Politicien bon sang !');
         } else {
             message.member.addRole("689127549418078342").catch(console.error);
-            message.reply('Bien joué tu es maintenant Mathématicien');
+            message.reply('Réfléchis, tu es déja Mathématicien, Economiste ou Politicien bon sang !');
+            message.reply("Si tu penses que c'est une erreur contacte Bakhaow | Safwane");
         }
     }
     
