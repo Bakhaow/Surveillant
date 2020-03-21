@@ -21,20 +21,40 @@ client.on('message', message => {
         message.member.addRole("689180199224475720").catch(console.error);
         message.channel.send('Bienvenue ' + nickname);
     }else if(command === 'allemand' || command === 'germaniste' || command === 'ger' || command === 'g' || command === 'all' || command === 'a') {
-        message.member.addRole("689127335697317901").catch(console.error);
-        message.reply('Bien joué tu es maintenant Germaniste/Allemand');
+        if(message.member.roles.has('689127335697317901') || message.member.roles.has('689126422941663251')) {
+            message.reply('Réfléchis, tu es déja Hispaniste/Espagnol/Germaniste/Allemand, bon sang');
+        } else {
+            message.member.addRole("689127335697317901").catch(console.error);
+            message.reply('Bien joué tu es maintenant Germaniste/Allemand');
+        }
     }else if(command === 'espagnol' || command === 'esp' || command === 'e' || command === 'hispaniste' || command === 'h') {
-        message.member.addRole("689126422941663251").catch(console.error);
-        message.reply('Bien joué tu es maintenant Hispaniste/Espagnol');
+        if(message.member.roles.has('689126422941663251') || message.member.roles.has('689127335697317901')) {
+            message.reply('Réfléchis, tu es déja Hispaniste/Espagnol/Germaniste/Allemand, bon sang');
+        } else {
+            message.member.addRole("689126422941663251").catch(console.error);
+            message.reply('Bien joué tu es maintenant Hispaniste/Espagnol');
+        }
     }else if(command === 'politique' || command === 'po') {
-        message.member.addRole("689127737138610278").catch(console.error);
-        message.reply('Bien joué tu es maintenant Politicien');
+        if(message.member.roles.has('689127737138610278') || message.member.roles.has('689127728796008549') || message.member.roles.has('689127549418078342')) {
+            message.reply('Réfléchis, tu es déja Politicien, bon sang');
+        } else {
+            message.member.addRole("689127737138610278").catch(console.error);
+            message.reply('Bien joué tu es maintenant Politicien');
+        }
     }else if(command === 'economique' || command === 'eco') {
-        message.member.addRole("689127728796008549").catch(console.error);
-        message.reply('Bien joué tu es maintenant Economiste');
+        if(message.member.roles.has('689127737138610278') || message.member.roles.has('689127728796008549') || message.member.roles.has('689127549418078342')) {
+            message.reply('Réfléchis, tu es déja Economiste, bon sang');
+        } else {
+            message.member.addRole("689127728796008549").catch(console.error);
+            message.reply('Bien joué tu es maintenant Economiste');
+        }
     }else if(command === 'maths' || command === 'm') {
-        message.member.addRole("689127549418078342").catch(console.error);
-        message.reply('Bien joué tu es maintenant Mathématicien');
+        if(message.member.roles.has('689127737138610278') || message.member.roles.has('689127728796008549') || message.member.roles.has('689127549418078342')) {
+            message.reply('Réfléchis, tu es déja mathématicien, bon sang');
+        } else {
+            message.member.addRole("689127549418078342").catch(console.error);
+            message.reply('Bien joué tu es maintenant Mathématicien');
+        }
     }
     
     
