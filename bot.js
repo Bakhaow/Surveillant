@@ -14,7 +14,7 @@ client.on('message', message => {
     const command = args.shift().toLowerCase();
 
     if(command === 'register' || command === 'reg' || command === 'r') {
-        if(args.length <= 2) {
+        if(args.length < 2) {
             message.channel.send('Hey il faut que tu entres un nom et un prénom.');
         } else {
             let nom = args[0];
