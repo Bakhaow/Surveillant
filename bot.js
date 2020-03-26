@@ -64,10 +64,6 @@ client.on('message', message => {
             message.member.addRole("689127549418078342").catch(console.error);
             message.reply('Bien joué tu es maintenant Mathématicien');
         }
-    }else if(command === 'ouhoo' || command === 'o') {
-        message.channel.send('!p https://www.youtube.com/watch?v=BVLvFOos1_E');
-        wait(5000);
-        message.channel.send('!disconnect');
     }
     
     
