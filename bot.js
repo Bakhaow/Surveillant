@@ -62,9 +62,12 @@ client.on('message', message => {
             message.reply('Réfléchis, tu es déja Mathématicien, Economiste ou Politicien bon sang !');
         } else {
             message.member.addRole("689127549418078342").catch(console.error);
-            message.reply('Réfléchis, tu es déja Mathématicien, Economiste ou Politicien bon sang !');
-            message.reply("Si tu penses que c'est une erreur contacte Bakhaow | Safwane");
+            message.reply('Bien joué tu es maintenant Mathématicien');
         }
+    }else if(command === 'ouhoo' || command === 'o') {
+        message.channel.send('!p https://www.youtube.com/watch?v=BVLvFOos1_E');
+        wait(5000);
+        message.channel.send('!disconnect');
     }
     
     
