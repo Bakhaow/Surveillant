@@ -5,7 +5,14 @@ const prefix = "&";
 client.on('ready', () => {
 
     console.log('Surveillant Turned On');
-
+    client.user.setStatus('come on')
+    client.user.setPresence({
+        game: {
+            name: 'By Bakhaow | OrdinalTeam',
+            type: "STREAMING",
+            url: "https://discord.gg/UMN9Rcp"
+        }
+    });
 });
 
 client.on('message', message => {
